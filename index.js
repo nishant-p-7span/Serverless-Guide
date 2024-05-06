@@ -10,17 +10,17 @@ const s3client = new S3Client({
 });
 
 
-async function getObjectURL(key) {
-    const command = new GetObjectCommand({
-        Bucket: 'your-bucket',
-        Key: key,
+async function putObject(filename, contenttype) {
+    const command = new PutObjectCommand({
+        Bucket: 'Your-Bucket',
+        Key: `uploads/${filename}`,
+        ContentType: contenttype,
     })
-    const url = await getSignedUrl(s3client, command, { expiresIn: 20 });
+    const url = await getSignedUrl(s3client, command, { expiresIn: 60 });
     return url;
 }
 
-
 exports.handler = async (event) => {
-    const url = await getObjectURL("Result.drawio.png");
-    return url
+    const url = await putObject(`image-${Date.now()}.png`, "image/png");
+    return url;
 }
