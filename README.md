@@ -3,3 +3,9 @@
 - Rest set up same as main READEM.
 
 ## NODEJS Files are uploaded.
+
+## Logic:
+- for private bucket there is not direct access to the objects, and public bucket is accessible publicly and unsafe.
+- PreSigned URl are URL Genrated with the account credentials and Security, through object is accessible.
+- we provide access key and Password.
+- Then AWS SDK Generate the presigned URL for the limited time to access the object publically.
