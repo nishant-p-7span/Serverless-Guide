@@ -1,0 +1,23 @@
+service: s2-presigned
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:GetObject"
+        - "s3:GetObjectVersion"
+        - "s3:PutObject"
+      Resource:
+        - "arn:aws:s3:::your-bucket/*"
+
+functions:
+  s3upload:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /get
+          method: any
