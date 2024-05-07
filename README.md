@@ -55,6 +55,12 @@ functions:
 - YAML file is uploaded to the repo. use it.
 > this YAML file is configured to apply changes on the push in main branch.
 
+## Lambda Function URL:
+- Simple solution to create HTTP endpoint for the lambda functin.
+- With Functioon URL we can perform http requests to the Lambda.
+- How to enable it using Serverless Framework:
+  ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/749f301d-55a3-49d4-b15d-9450661e286c)
+
 ## Lambda Function Versoning.
 - Versioning is the functionality of the  Lmabda Function. We can publish the multiple versions of the lambda and invoke the lambda function accordingly.
 - It can be invoked with: `rn:aws:lambda:ap-south-1:XXXXXXXXX:function:XXXXXXXXX:versionnumber`.
