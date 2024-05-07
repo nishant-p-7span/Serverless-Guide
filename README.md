@@ -55,5 +55,8 @@ functions:
 - YAML file is uploaded to the repo. use it.
 > this YAML file is configured to apply changes on the push in main branch.
 
+## Lambda Function Versoning.
+![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/7174e7bc-51de-4662-a533-979699962f7d)
+
 # Note:
 > Don't forget to Run `npm i` and include node_modules folder in the lamda functions, otherwise function will not work.
