@@ -54,3 +54,6 @@ functions:
 - Add the Access id and access key to the Git Secrates.
 - YAML file is uploaded to the repo. use it.
 > this YAML file is configured to apply changes on the push in main branch.
+
+# Note:
+> Don't forget to Run `npm i` and include node_modules folder in the lamda functions, otherwise function will not work.
