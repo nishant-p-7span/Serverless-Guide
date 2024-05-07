@@ -1,4 +1,4 @@
-service: s2-presigned
+service: s3-putObject-Trigger
 frameworkVersion: '3'
 
 provider:
@@ -12,12 +12,20 @@ provider:
         - "s3:GetObjectVersion"
         - "s3:PutObject"
       Resource:
-        - "arn:aws:s3:::your-bucket/*"
+        - "arn:aws:s3:::xxxxxxx/*"
 
 functions:
   s3upload:
-    handler: index.handler
+    handler: Upload/index.handler
     events:
       - httpApi:
           path: /get
           method: any
+
+  logger:
+    handler: Trigger/handler.readS3File
+    events:
+      - s3:
+          bucket: xxxxxxxxxxx
+          event: s3:ObjectCreated:*
+          existing: true
