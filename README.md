@@ -56,7 +56,19 @@ functions:
 > this YAML file is configured to apply changes on the push in main branch.
 
 ## Lambda Function Versoning.
+- Versioning is the functionality of the  Lmabda Function. We can publish the multiple versions of the lambda and invoke the lambda function accordingly.
+- It can be invoked with: `rn:aws:lambda:ap-south-1:XXXXXXXXX:function:XXXXXXXXX:versionnumber`.
+- User Function on Serverless framework:
 ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/7174e7bc-51de-4662-a533-979699962f7d)
+- How to Purne Older version using Serverless Plugin: https://www.serverless.com/plugins/serverless-prune-versions
+
+## Lambda Aliases:
+- Aliases are pointers to the specific lambda version.
+- It is used when working with the live projects and to have dev, test and production version of lambda.
+- We need to ceate alias with name and version specified:
+  ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/652a5588-e4a7-4642-a655-17c9831f1d2c)
+- Weighted Alias, used to shift traffic between two version. like 75% traffic to Production version and 25% to Dev version.
+  ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/ec3b6f9b-e219-4e5f-80f1-d63d6ac70614)
 
 # Note:
 > Don't forget to Run `npm i` and include node_modules folder in the lamda functions, otherwise function will not work.
