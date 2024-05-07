@@ -1,0 +1,17 @@
+service: demo-node
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+functions:
+  api:
+    handler: app.handler
+    environment:
+      MONGO: 'your-value'
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: any
