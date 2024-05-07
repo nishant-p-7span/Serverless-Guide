@@ -76,5 +76,19 @@ functions:
 - Weighted Alias, used to shift traffic between two version. like 75% traffic to Production version and 25% to Dev version.
   ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/ec3b6f9b-e219-4e5f-80f1-d63d6ac70614)
 
+## Environment Variables:
+- These Environment Variables are same as we use in other service/ program.
+- For node js:
+  ```
+  require('dotenv').config()
+  const url = process.env.MONGO;
+  ```
+- How to Set up using serverless framework:
+  ![image](https://github.com/nishant-p-7span/Serverless-Guide/assets/160576245/47a88fbe-e3cd-44ff-b12d-e17a3c6d8c52)
+
+Rererance: https://www.serverless.com/framework/docs-providers-aws-guide-functions
+
 # Note:
 > Don't forget to Run `npm i` and include node_modules folder in the lamda functions, otherwise function will not work.
+
+> NodeJS express deployment using serverless with environemt variables is uploaded to the Branch: `Express Example`.
